@@ -36,6 +36,8 @@ export default defineConfig({
           items: [
             { label: "概述", slug: "ch04-00-understanding-ownership" },
             { label: "什么是所有权？", slug: "ch04-01-what-is-ownership" },
+            { label: "引用与借用", slug: "ch04-02-references-and-borrowing" },
+            { label: "切片类型", slug: "ch04-03-slices" },
           ],
         },
       ],
