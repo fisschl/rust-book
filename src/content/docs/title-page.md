@@ -2,11 +2,9 @@
 title: Rust 程序设计语言
 ---
 
-# Rust 程序设计语言
-
 _作者：Steve Klabnik、Carol Nichols 和 Chris Krycho，Rust 社区成员贡献_
 
-本书版本假设你使用的是 Rust 1.90.0（发布于 2025-09-18）或更高版本，并且所有项目的 *Cargo.toml* 文件中设置了 `edition = "2024"` 以配置使用 Rust 2024 版本的惯用法。有关安装或更新 Rust 的说明，请参阅第 1 章的[安装][install]<!-- ignore -->部分；有关版本的信息，请参阅[附录 E][appendix-e]<!-- ignore -->。
+本书版本假设你使用的是 Rust 1.90.0（发布于 2025-09-18）或更高版本，并且所有项目的 *Cargo.toml* 文件中设置了 `edition = "2024"` 以配置使用 Rust 2024 版本的惯用法。有关安装或更新 Rust 的说明，请参阅第 1 章的[安装][install]部分；有关版本的信息，请参阅[附录 E][appendix-e]。
 
 本书的 HTML 格式可在线访问
 [https://doc.rust-lang.org/stable/book/](https://doc.rust-lang.org/stable/book/)，

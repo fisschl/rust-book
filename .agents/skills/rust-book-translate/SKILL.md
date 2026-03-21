@@ -5,14 +5,43 @@ description: Rust Book Chinese translation skill, including glossary, formatting
 
 # Rust Book Translation
 
-## Lessons Learned (2025-03-21)
+## Lessons Learned
 
-### Key Findings
+### 2025-03-21 - Initial Setup
 1. **Must add frontmatter** - Astro Starlight requires every `.md` file to have `title:`
 2. **Homepage handled separately** - `index.md` uses `template: splash`, not included in sidebar
 3. **Link format** - `["Installation"]` is wrong, should be `[Installation]`
 4. **Navigation config** - Top-level pages as array items directly, no nested `label/items`
 5. **Image syntax** - HTML `<img>` tags have path resolution issues in Astro/Starlight, must use Markdown `![alt](path)` syntax
+
+### 2025-03-21 - Remove MDbook Markup
+MDbook-specific markup must be converted to standard Markdown for Astro Starlight:
+
+**Remove these MDbook-specific elements:**
+
+| MDbook Element | Standard Markdown Equivalent | Notes |
+|---------------|------------------------------|-------|
+| `<!-- ignore -->` | Remove | Link checker hint, not needed |
+| `<Listing number="...">` | `**清单 X-X**：描述` | Use bold text before code block |
+| `<a id="..."></a>` + `<!-- 旧标题... -->` | Remove entirely | Anchor compatibility, not needed |
+| `<span class="filename">` | `*文件名: path*` | Use italic text |
+
+**Example conversions:**
+
+```markdown
+<!-- BEFORE (MDbook) -->
+<Listing number="1-1" file-name="main.rs" caption="A program...">
+```rust
+fn main() {}
+```
+</Listing>
+
+<!-- AFTER (Standard) -->
+**清单 1-1**：一个程序...（文件名：*main.rs*）
+```rust
+fn main() {}
+```
+```
 
 ### Common Pitfalls
 - Forgetting to check `bun run dev` error messages
@@ -45,15 +74,17 @@ description: Rust Book Chinese translation skill, including glossary, formatting
 
 ## Formatting Rules
 
-| Element | Handling |
-|---------|----------|
-| Code blocks | Preserve as-is |
-| `<!-- ignore -->` | Keep |
-| `[text][ref]` | Keep link syntax |
-| `<span id="...">` | Keep HTML |
-| `*italic*` | Keep italics |
-| `**bold**` | Keep bold |
-| **Images** | **Must use `![alt](path)`, not `<img>`** |
+| Element | Handling | Notes |
+|---------|----------|-------|
+| Code blocks | Preserve as-is | |
+| `<!-- ignore -->` | **Remove** | MDbook-specific, not needed in Starlight |
+| `[text][ref]` | Keep link syntax | Use `[Text]` not `["Text"]` |
+| `<span id="...">` | **Remove** | MDbook anchor compatibility |
+| `*italic*` | Keep italics | |
+| `**bold**` | Keep bold | |
+| `<Listing ...>` | Convert to `**清单 X-X**` | Standard markdown |
+| `<span class="filename">` | Convert to `*文件名: path*` | Use italic |
+| **Images** | **Must use `![alt](path)`, not `<img>`** | HTML has path issues |
 
 ### Image Path Rules
 
@@ -80,4 +111,7 @@ description: Rust Book Chinese translation skill, including glossary, formatting
 - [ ] Terminology consistent with glossary
 - [ ] Code not translated
 - [ ] Ferris images use Markdown syntax
+- [ ] **No MDbook-specific markup** (`<!-- ignore -->`, `<Listing>`, `<a id="...">`)
+- [ ] Subheadings use `##` (not `###` when main title is in frontmatter)
 - [ ] `bun run dev` runs without errors
+- [ ] No duplicate main titles (frontmatter `title` + markdown `# Title`)

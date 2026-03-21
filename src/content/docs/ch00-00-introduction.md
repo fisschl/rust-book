@@ -2,8 +2,6 @@
 title: 介绍
 ---
 
-# 介绍
-
 > 注意：本书的这一版本与 [No Starch Press][nsp] 出版的[《Rust 程序设计语言》][nsprust]纸质版和电子书版本相同。
 
 [nsprust]: https://nostarch.com/rust-programming-language-3rd-edition

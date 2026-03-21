@@ -10,7 +10,7 @@ hero:
       icon: right-arrow
       variant: primary
     - text: 在 GitHub 上查看
-      link: https://github.com/fisschl/news
+      link: https://github.com/fisschl/rust-book
       icon: external
       variant: minimal
 ---
