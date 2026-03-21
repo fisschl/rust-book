@@ -2,11 +2,11 @@
 title: 切片类型
 ---
 
-*切片*让你引用[集合](https://doc.rust-lang.org/book/ch08-00-common-collections.html)中的连续元素序列。切片是一种引用，所以它没有所有权。
+*切片*让你引用[集合][ch08]中的连续元素序列。切片是一种引用，所以它没有所有权。
 
 这里有一个小的编程问题：编写一个函数，接受一个由空格分隔的单词字符串，并返回它找到的第一个单词。如果函数在字符串中没有找到空格，整个字符串必须是一个单词，因此应该返回整个字符串。
 
-> 注意：为了介绍切片的目的，我们在本节中假设只有 ASCII；关于 UTF-8 处理的更详细讨论在第 8 章的["使用字符串存储 UTF-8 编码文本"][字符串]<!-- ignore --> 部分。
+> 注意：为了介绍切片的目的，我们在本节中假设只有 ASCII；关于 UTF-8 处理的更详细讨论在第 8 章的["使用字符串存储 UTF-8 编码文本"][字符串] 部分。
 
 让我们先通过不切片的方式来编写这个函数的签名，来理解切片将解决的问题：
 
@@ -46,9 +46,9 @@ let bytes = s.as_bytes();
 for (i, &item) in bytes.iter().enumerate() {
 ```
 
-我们将在[第 13 章][ch13]<!-- ignore --> 更详细地讨论迭代器。现在，知道 `iter` 是一个返回集合中每个元素的方法，`enumerate` 包装 `iter` 的结果并返回每个元素作为元组的一部分。`enumerate` 返回的元组的第一个元素是索引，第二个元素是对元素的引用。这比我们自己计算索引更方便。
+我们将在[第 13 章][ch13] 更详细地讨论迭代器。现在，知道 `iter` 是一个返回集合中每个元素的方法，`enumerate` 包装 `iter` 的结果并返回每个元素作为元组的一部分。`enumerate` 返回的元组的第一个元素是索引，第二个元素是对元素的引用。这比我们自己计算索引更方便。
 
-因为 `enumerate` 方法返回一个元组，我们可以使用模式来解构该元组。我们将在[第 6 章][ch6]<!-- ignore --> 更详细地讨论模式。在 `for` 循环中，我们指定一个模式，在元组中有 `i` 作为索引，在元组中有 `&item` 作为单个字节。因为我们从 `.iter().enumerate()` 得到对元素的引用，所以我们在模式中使用 `&`。
+因为 `enumerate` 方法返回一个元组，我们可以使用模式来解构该元组。我们将在[第 6 章][ch6] 更详细地讨论模式。在 `for` 循环中，我们指定一个模式，在元组中有 `i` 作为索引，在元组中有 `&item` 作为单个字节。因为我们从 `.iter().enumerate()` 得到对元素的引用，所以我们在模式中使用 `&`。
 
 在 `for` 循环内部，我们使用字节字面量语法搜索代表空格的字节。如果我们找到一个空格，我们返回位置。否则，我们使用 `s.len()` 返回字符串的长度。
 
@@ -272,7 +272,7 @@ fn first_word(s: &str) -> &str {
 }
 ```
 
-如果我们有一个字符串切片，我们可以直接传递它。如果我们有一个 `String`，我们可以传递 `String` 的切片或对 `String` 的引用。这种灵活性利用了 deref 强制转换，我们将在第 15 章的["在函数和方法中使用 Deref 强制转换"][deref-coercions]<!-- ignore --> 部分介绍。
+如果我们有一个字符串切片，我们可以直接传递它。如果我们有一个 `String`，我们可以传递 `String` 的切片或对 `String` 的引用。这种灵活性利用了 deref 强制转换，我们将在第 15 章的["在函数和方法中使用 Deref 强制转换"][deref-coercions] 部分介绍。
 
 定义一个函数以获取字符串切片而不是对 `String` 的引用，使我们的 API 更通用和有用，而不会失去任何功能：
 
@@ -339,7 +339,8 @@ assert_eq!(slice, &[2, 3]);
 
 所有权影响 Rust 的许多其他部分的工作方式，因此我们将在本书的其余部分进一步讨论这些概念。让我们继续进入第 5 章，看看如何在 `struct` 中将数据片段组合在一起。
 
-[字符串]: https://doc.rust-lang.org/book/ch08-02-strings.html#storing-utf-8-encoded-text-with-strings
-[ch13]: https://doc.rust-lang.org/book/ch13-02-iterators.html
-[ch6]: https://doc.rust-lang.org/book/ch06-02-match.html#patterns-that-bind-to-values
-[deref-coercions]: https://doc.rust-lang.org/book/ch15-02-deref.html#using-deref-coercions-in-functions-and-methods
+[字符串]: /rust-book/ch08-02-strings/#使用字符串存储-utf-8-编码文本
+[ch08]: https://doc.rust-lang.org/book/ch08-00-common-collections.html
+[ch13]: /rust-book/ch13-02-iterators/
+[ch6]: /rust-book/ch06-02-match/#绑定到值的匹配模式
+[deref-coercions]: /rust-book/ch15-02-deref/#在函数和方法中使用-deref-强制转换

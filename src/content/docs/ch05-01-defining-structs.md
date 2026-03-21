@@ -2,7 +2,7 @@
 title: 定义并实例化结构体
 ---
 
-结构体与第 3 章["元组类型"][tuples]<!-- ignore --> 部分讨论的元组类似，两者都包含多个相关的值。像元组一样，结构体的各个部分可以是不同类型。但与元组不同的是，在结构体中你会为每个数据命名，这样值的意义就很清楚。添加这些名称意味着结构体比元组更灵活：你不必依赖数据的顺序来指定或访问实例的值。
+结构体与第 3 章["元组类型"][tuples] 部分讨论的元组类似，两者都包含多个相关的值。像元组一样，结构体的各个部分可以是不同类型。但与元组不同的是，在结构体中你会为每个数据命名，这样值的意义就很清楚。添加这些名称意味着结构体比元组更灵活：你不必依赖数据的顺序来指定或访问实例的值。
 
 要定义结构体，我们输入关键字 `struct` 并命名整个结构体。结构体的名称应该描述正在分组的数据块的意义。然后，在大括号内，我们定义数据的名称和类型，我们称这些数据为*字段*。例如，清单 5-1 展示了一个存储用户账户信息的结构体。
 
@@ -197,7 +197,7 @@ fn main() {
 
 清单 5-7 中的代码也在 `user2` 中创建了一个实例，该实例具有不同的 `email` 值，但具有来自 `user1` 的 `username`、`active` 和 `sign_in_count` 字段的相同值。`..user1` 必须放在最后，以指定任何其余字段应从其对应字段中获取值，但我们可以选择按任何顺序为任意多的字段指定值，无论字段在结构体定义中的顺序如何。
 
-请注意，结构体更新语法使用 `=` 就像赋值一样；这是因为它会移动数据，正如我们在["变量与数据交互：移动"][move]<!-- ignore --> 部分中看到的那样。在这个例子中，创建 `user2` 后我们不能再使用 `user1`，因为 `user1` 的 `username` 字段中的 `String` 被移动到了 `user2` 中。如果我们为 `user2` 提供了 `email` 和 `username` 的新 `String` 值，因此只使用了来自 `user1` 的 `active` 和 `sign_in_count` 值，那么创建 `user2` 后 `user1` 仍然有效。`active` 和 `sign_in_count` 都是实现 `Copy` trait 的类型，所以我们讨论过的["仅栈数据：Copy"][copy]<!-- ignore --> 部分中的行为将适用。在这个例子中，我们也可以继续使用 `user1.email`，因为它的值没有被移出 `user1`。
+请注意，结构体更新语法使用 `=` 就像赋值一样；这是因为它会移动数据，正如我们在["变量与数据交互：移动"][move] 部分中看到的那样。在这个例子中，创建 `user2` 后我们不能再使用 `user1`，因为 `user1` 的 `username` 字段中的 `String` 被移动到了 `user2` 中。如果我们为 `user2` 提供了 `email` 和 `username` 的新 `String` 值，因此只使用了来自 `user1` 的 `active` 和 `sign_in_count` 值，那么创建 `user2` 后 `user1` 仍然有效。`active` 和 `sign_in_count` 都是实现 `Copy` trait 的类型，所以我们讨论过的["仅栈数据：Copy"][copy] 部分中的行为将适用。在这个例子中，我们也可以继续使用 `user1.email`，因为它的值没有被移出 `user1`。
 
 ### 使用元组结构体创建不同类型
 
@@ -221,7 +221,7 @@ fn main() {
 
 ### 定义类单元结构体
 
-你也可以定义没有任何字段的结构体！这些被称为*类单元结构体*，因为它们的行为类似于 `()`，我们在["元组类型"][tuples]<!-- ignore --> 部分中提到的单元类型。当你需要为某个类型实现 trait 但不想在该类型本身存储任何数据时，类单元结构体很有用。我们将在第 10 章讨论 trait。这里有一个声明和实例化名为 `AlwaysEqual` 的单元结构体的例子：
+你也可以定义没有任何字段的结构体！这些被称为*类单元结构体*，因为它们的行为类似于 `()`，我们在["元组类型"][tuples] 部分中提到的单元类型。当你需要为某个类型实现 trait 但不想在该类型本身存储任何数据时，类单元结构体很有用。我们将在第 10 章讨论 trait。这里有一个声明和实例化名为 `AlwaysEqual` 的单元结构体的例子：
 
 **文件名：src/main.rs**
 
@@ -298,6 +298,6 @@ fn main() {
 >
 > 在第 10 章中，我们将讨论如何修复这些错误，以便你可以在结构体中存储引用，但现在，我们将使用像 `String` 这样的拥有类型而不是像 `&str` 这样的引用来修复这些错误。
 
-[tuples]: /rust-book/ch03-02-data-types#the-tuple-type
-[move]: https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#variables-and-data-interacting-with-move
-[copy]: https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#stack-only-data-copy
+[tuples]: /rust-book/ch03-02-data-types#元组类型
+[move]: /rust-book/ch04-01-what-is-ownership/#变量与数据交互移动
+[copy]: /rust-book/ch04-01-what-is-ownership/#仅栈数据copy

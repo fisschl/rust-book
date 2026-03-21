@@ -42,7 +42,7 @@ The area of the rectangle is 1500 square pixels.
 fn area(width: u32, height: u32) -> u32 {
 ```
 
-`area` 函数应该计算一个矩形的面积，但我们编写的函数有两个参数，而且在我们程序的任何地方都不清楚这两个参数是相关的。将宽度和高度组合在一起会更易读和更易管理。我们在第 3 章的["元组类型"][the-tuple-type]<!-- ignore --> 部分讨论过一种方法：使用元组。
+`area` 函数应该计算一个矩形的面积，但我们编写的函数有两个参数，而且在我们程序的任何地方都不清楚这两个参数是相关的。将宽度和高度组合在一起会更易读和更易管理。我们在第 3 章的["元组类型"][the-tuple-type] 部分讨论过一种方法：使用元组。
 
 ### 使用元组重构
 
@@ -106,7 +106,7 @@ fn area(rectangle: &Rectangle) -> u32 {
 
 ### 使用派生 trait 添加功能
 
-在我们调试程序时，能够打印 `Rectangle` 实例并查看其所有字段的值会很有用。清单 5-11 尝试使用我们在前几章中使用过的 [`println!` 宏][println]<!-- ignore -->。然而，这不会起作用。
+在我们调试程序时，能够打印 `Rectangle` 实例并查看其所有字段的值会很有用。清单 5-11 尝试使用我们在前几章中使用过的 [`println!` 宏][println]。然而，这不会起作用。
 
 **清单 5-11**：尝试打印 `Rectangle` 实例（文件名：src/main.rs）
 
@@ -200,9 +200,9 @@ rect1 is Rectangle {
 }
 ```
 
-另一种使用 `Debug` 格式打印值的方法是使用 [`dbg!` 宏][dbg]<!-- ignore -->，它接受表达式的所有权（与 `println!` 相反，后者接受引用），打印该 `dbg!` 宏调用在你代码中发生的文件和行号以及该表达式的结果值，并返回该值的所有权。
+另一种使用 `Debug` 格式打印值的方法是使用 [`dbg!` 宏][dbg]，它接受表达式的所有权（与 `println!` 相反，后者接受引用），打印该 `dbg!` 宏调用在你代码中发生的文件和行号以及该表达式的结果值，并返回该值的所有权。
 
-> 注意：调用 `dbg!` 宏会打印到标准错误控制台流（`stderr`），与 `println!` 相反，后者打印到标准输出控制台流（`stdout`）。我们将在第 12 章的["将错误重定向到标准错误"][err]<!-- ignore --> 部分更多地讨论 `stderr` 和 `stdout`。
+> 注意：调用 `dbg!` 宏会打印到标准错误控制台流（`stderr`），与 `println!` 相反，后者打印到标准输出控制台流（`stdout`）。我们将在第 12 章的["将错误重定向到标准错误"][err] 部分更多地讨论 `stderr` 和 `stdout`。
 
 这里有一个例子，我们对分配给 `width` 字段的值以及 `rect1` 中整个结构体的值感兴趣：
 
@@ -240,13 +240,13 @@ $ cargo run
 
 我们可以看到第一个输出位来自 *src/main.rs* 第 10 行，我们在那里调试表达式 `30 * scale`，其结果值是 `60`（为整数实现的 `Debug` 格式只是打印它们的值）。*src/main.rs* 第 14 行的 `dbg!` 调用输出了 `&rect1` 的值，即 `Rectangle` 结构体。此输出使用 `Rectangle` 类型的漂亮 `Debug` 格式。当你试图弄清楚代码在做什么时，`dbg!` 宏真的很有帮助！
 
-除了 `Debug` trait，Rust 还提供了许多 trait 供我们使用 `derive` 属性，可以为我们的自定义类型添加有用的行为。这些 trait 及其行为列在[附录 C][app-c]<!-- ignore --> 中。我们将介绍如何在第 10 章实现这些 trait 以及自定义行为，以及如何创建你自己的 trait。还有许多 `derive` 以外的属性；有关更多信息，请参阅 [Rust Reference 的"属性"部分][attributes]。
+除了 `Debug` trait，Rust 还提供了许多 trait 供我们使用 `derive` 属性，可以为我们的自定义类型添加有用的行为。这些 trait 及其行为列在[附录 C][app-c] 中。我们将介绍如何在第 10 章实现这些 trait 以及自定义行为，以及如何创建你自己的 trait。还有许多 `derive` 以外的属性；有关更多信息，请参阅 [Rust Reference 的"属性"部分][attributes]。
 
 我们的 `area` 函数非常具体：它只计算矩形的面积。将这种行为与我们的 `Rectangle` 结构体更紧密地联系起来会很有帮助，因为它不适用于任何其他类型。让我们看看如何继续重构这段代码，将 `area` 函数转变为在我们 `Rectangle` 类型上定义的 `area` 方法。
 
-[the-tuple-type]: /rust-book/ch03-02-data-types#the-tuple-type
-[app-c]: https://doc.rust-lang.org/book/appendix-03-derivable-traits.html
+[the-tuple-type]: /rust-book/ch03-02-data-types#元组类型
+[app-c]: /rust-book/appendix-03-derivable-traits/
 [println]: https://doc.rust-lang.org/std/macro.println.html
 [dbg]: https://doc.rust-lang.org/std/macro.dbg.html
-[err]: https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html
+[err]: /rust-book/ch12-06-writing-to-stderr-instead-of-stdout/
 [attributes]: https://doc.rust-lang.org/reference/attributes.html
