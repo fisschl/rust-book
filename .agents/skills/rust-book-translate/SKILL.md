@@ -14,6 +14,36 @@ description: Rust Book Chinese translation skill, including glossary, formatting
 4. **Navigation config** - Top-level pages as array items directly, no nested `label/items`
 5. **Image syntax** - HTML `<img>` tags have path resolution issues in Astro/Starlight, must use Markdown `![alt](path)` syntax
 
+### 2025-03-21 - Link Format (Critical)
+**NEVER use relative paths like `./filename` for internal links!**
+
+In Astro Starlight with `base: "/rust-book/"`:
+- ❌ `./ch01-01-installation` - Breaks when URL has trailing slash
+- ✅ `/rust-book/ch01-01-installation` - Works in all cases
+
+**Why:** When a page is accessed with trailing slash (e.g., `/ch01-02-hello-world/`), relative paths resolve incorrectly as `/ch01-02-hello-world/ch01-01-installation` instead of `/rust-book/ch01-01-installation`.
+
+**Anchor Requirements:**
+- Use Chinese anchors matching the translated headings
+- Example: `#遮蔽shadowing` (not `#shadowing`)
+- Check generated HTML to verify anchor IDs
+
+**External Links:**
+- Translated chapters: `/rust-book/<slug>`
+- Untranslated chapters: `https://doc.rust-lang.org/book/<path>`
+- Standard library: `../std/...` (points to official Rust docs)
+
+**Link Reference Format:**
+```markdown
+<!-- Correct -->
+[variables-and-mutability]: /rust-book/ch03-01-variables-and-mutability
+[shadowing]: /rust-book/ch03-01-variables-and-mutability#遮蔽shadowing
+[enums]: https://doc.rust-lang.org/book/ch06-00-enums.html
+
+<!-- Wrong - will cause 404 with trailing slash -->
+[variables-and-mutability]: ./ch03-01-variables-and-mutability
+```
+
 ### 2025-03-21 - Remove MDbook Markup
 MDbook-specific markup must be converted to standard Markdown for Astro Starlight:
 
@@ -79,6 +109,7 @@ fn main() {}
 | Code blocks | Preserve as-is | |
 | `<!-- ignore -->` | **Remove** | MDbook-specific, not needed in Starlight |
 | `[text][ref]` | Keep link syntax | Use `[Text]` not `["Text"]` |
+| **Internal links** | **Use `/rust-book/...` (absolute)** | ❌ Never use `./filename` (breaks with trailing slash) |
 | `<span id="...">` | **Remove** | MDbook anchor compatibility |
 | `*italic*` | Keep italics | |
 | `**bold**` | Keep bold | |
@@ -126,6 +157,9 @@ sed -i 's/rust,does_not_compile/rust/g' file.md
 
 - [ ] Frontmatter contains title
 - [ ] No `["text"]` incorrect link format
+- [ ] **Internal links use absolute paths `/rust-book/...` (NOT `./filename`)**
+- [ ] **Link anchors match translated Chinese headings**
+- [ ] **Untranslated chapter links point to doc.rust-lang.org**
 - [ ] Terminology consistent with glossary
 - [ ] Code not translated
 - [ ] Ferris images use Markdown syntax
@@ -133,3 +167,4 @@ sed -i 's/rust,does_not_compile/rust/g' file.md
 - [ ] Subheadings use `##` (not `###` when main title is in frontmatter)
 - [ ] `bun run dev` runs without errors
 - [ ] No duplicate main titles (frontmatter `title` + markdown `# Title`)
+- [ ] **Test links work with BOTH `/page/` and `/page` URLs**
