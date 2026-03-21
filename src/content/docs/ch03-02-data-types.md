@@ -316,11 +316,11 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 
 这是 Rust 内存安全原则在实践中的一个例子。在许多低级语言中，不进行这种检查，当你提供不正确的索引时，可能会访问无效内存。Rust 通过立即退出而不是允许内存访问并继续来保护你免受这种错误。第9章讨论了 Rust 的更多错误处理，以及如何编写既不会 panic 也不会允许无效内存访问的可读、安全代码。
 
-[comparing-the-guess-to-the-secret-number]: ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number
+[comparing-the-guess-to-the-secret-number]: /rust-book/ch02-00-guessing-game-tutorial#比较猜测与秘密数字
 [twos-complement]: https://en.wikipedia.org/wiki/Two%27s_complement
-[control-flow]: ch03-05-control-flow.html#control-flow
-[strings]: ch08-02-strings.html#storing-utf-8-encoded-text-with-strings
-[stack-and-heap]: ch04-01-what-is-ownership.html#the-stack-and-the-heap
-[vectors]: ch08-01-vectors.html
-[unrecoverable-errors-with-panic]: ch09-01-unrecoverable-errors-with-panic.html
-[appendix_b]: appendix-02-operators.md
+[control-flow]: /rust-book/ch03-05-control-flow
+[strings]: https://doc.rust-lang.org/book/ch08-02-strings.html#storing-utf-8-encoded-text-with-strings
+[stack-and-heap]: https://doc.rust-lang.org/book/ch04-01-what-is-ownership.html#the-stack-and-the-heap
+[vectors]: https://doc.rust-lang.org/book/ch08-01-vectors.html
+[unrecoverable-errors-with-panic]: https://doc.rust-lang.org/book/ch09-01-unrecoverable-errors-with-panic.html
+[appendix_b]: https://doc.rust-lang.org/book/appendix-02-operators.html

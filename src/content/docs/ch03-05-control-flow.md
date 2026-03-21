@@ -191,7 +191,7 @@ error[E0308]: `if` and `else` have incompatible types
  --> src/main.rs:4:44
   |
 4 |     let number = if condition { 5 } else { "six" };
-  |                                 -          ^^^^^ expected integer, found `\u0026str`
+  |                                 -          ^^^^^ expected integer, found `&str`
   |                                 |
   |                                 expected because of this
 
@@ -223,7 +223,7 @@ fn main() {
 }
 ```
 
-当我们运行这个程序时，我们会看到 `again!` 被不断地打印，直到我们手动停止程序。大多数终端支持键盘快捷键 <kbd>ctrl</kbd>-<kbd>C</kbd> 来中断一个陷入持续循环的程序。试试看：
+当我们运行这个程序时，我们会看到 `again!` 被不断地打印，直到我们手动停止程序。大多数终端支持键盘快捷键 `ctrl-C` 来中断一个陷入持续循环的程序。试试看：
 
 ```console
 $ cargo run
@@ -237,7 +237,7 @@ again!
 ^Cagain!
 ```
 
-符号 `^C` 代表你按下 <kbd>ctrl</kbd>-<kbd>C</kbd> 的位置。
+符号 `^C` 代表你按下 `ctrl-C` 的位置。
 
 你可能会也可能不会在 `^C` 之后看到单词 `again!`，这取决于代码在循环中接收到中断信号时的位置。
 
@@ -419,5 +419,5 @@ fn main() {
 
 当你准备好继续前进时，我们将讨论 Rust 中一个在其他编程语言中*不*常存在的概念：所有权。
 
-[comparing-the-guess-to-the-secret-number]: ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number
-[quitting-after-a-correct-guess]: ch02-00-guessing-game-tutorial.html#quitting-after-a-correct-guess
+[comparing-the-guess-to-the-secret-number]: /rust-book/ch02-00-guessing-game-tutorial#比较猜测与秘密数字
+[quitting-after-a-correct-guess]: /rust-book/ch02-00-guessing-game-tutorial#猜中后退出

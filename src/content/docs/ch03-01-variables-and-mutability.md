@@ -80,7 +80,7 @@ The value of x is: 6
 
 与不可变变量一样，*常量*是绑定到名称且不允许更改的值，但常量和变量之间存在一些差异。
 
-首先，你不允许对常量使用 `mut`。常量不仅是默认不可变的——它们总是不可变的。你使用 `const` 关键字而不是 `let` 关键字来声明常量，并且值的类型*必须*被注解。我们将在下一节["数据类型"][data-types]中介绍类型和类型注解，所以现在就别担心细节了。只要知道你必须始终注解类型。
+首先，你不允许对常量使用 `mut`。常量不仅是默认不可变的——它们总是不可变的。你使用 `const` 关键字而不是 `let` 关键字来声明常量，并且值的类型*必须*被注解。我们将在下一节 ["数据类型"][data-types] 中介绍类型和类型注解，所以现在就别担心细节了。只要知道你必须始终注解类型。
 
 常量可以在任何范围内声明，包括全局范围，这使它们对代码的许多部分需要知道的值很有用。
 
@@ -169,7 +169,7 @@ error: could not compile `variables` (bin "variables") due to 1 previous error
 
 现在我们已经探讨了变量如何工作，让我们看看它们可以拥有的更多数据类型。
 
-[comparing-the-guess-to-the-secret-number]: ch02-00-guessing-game-tutorial.html#comparing-the-guess-to-the-secret-number
-[data-types]: ch03-02-data-types.html#data-types
-[storing-values-with-variables]: ch02-00-guessing-game-tutorial.html#storing-values-with-variables
+[comparing-the-guess-to-the-secret-number]: /rust-book/ch02-00-guessing-game-tutorial#比较猜测与秘密数字
+[data-types]: /rust-book/ch03-02-data-types
+[storing-values-with-variables]: /rust-book/ch02-00-guessing-game-tutorial#使用变量存储值
 [const-eval]: ../reference/const_eval.html

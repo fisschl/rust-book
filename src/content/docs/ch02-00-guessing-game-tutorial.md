@@ -781,21 +781,7 @@ fn main() {
 这个项目是一个动手实践的方式，向你介绍了许多新的 Rust 概念：`let`、`match`、函数、外部 crate 的使用等等。在接下来的几章中，你将更详细地了解这些概念。第 3 章涵盖大多数编程语言都有的概念，如变量、数据类型和函数，并展示如何在 Rust 中使用它们。第 4 章探讨所有权，这是使 Rust 有别于其他语言的特性。第 5 章讨论结构体和方法语法，第 6 章解释枚举如何工作。
 
 [prelude]: ../std/prelude/index.html
-[variables-and-mutability]: ch03-01-variables-and-mutability.html#variables-and-mutability
-[comments]: ch03-04-comments.html
-[string]: ../std/string/struct.String.html
-[iostdin]: ../std/io/struct.Stdin.html
-[read_line]: ../std/io/struct.Stdin.html#method.read_line
-[result]: ../std/result/enum.Result.html
-[enums]: ch06-00-enums.html
-[expect]: ../std/result/enum.Result.html#method.expect
-[recover]: ch09-02-recoverable-errors-with-result.html
-[randcrate]: https://crates.io/crates/rand
-[semver]: http://semver.org
-[cratesio]: https://crates.io/
-[doccargo]: https://doc.rust-lang.org/cargo/
-[doccratesio]: https://doc.rust-lang.org/cargo/reference/publishing.html
-[match]: ch06-02-match.html
-[shadowing]: ch03-01-variables-and-mutability.html#shadowing
-[parse]: ../std/primitive.str.html#method.parse
-[integers]: ch03-02-data-types.html#integer-types
+[variables-and-mutability]: /rust-book/ch03-01-variables-and-mutability
+[comments]: /rust-book/ch03-04-comments
+[shadowing]: /rust-book/ch03-01-variables-and-mutability#遮蔽shadowing
+[integers]: /rust-book/ch03-02-data-types#整数类型
