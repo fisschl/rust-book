@@ -31,6 +31,13 @@ export default defineConfig({
             { label: "控制流", slug: "ch03-05-control-flow" },
           ],
         },
+        {
+          label: "理解所有权",
+          items: [
+            { label: "概述", slug: "ch04-00-understanding-ownership" },
+            { label: "什么是所有权？", slug: "ch04-01-what-is-ownership" },
+          ],
+        },
       ],
     }),
   ],
