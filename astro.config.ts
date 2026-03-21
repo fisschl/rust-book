@@ -160,6 +160,18 @@ export default defineConfig({
             { slug: "ch16-04-extensible-concurrency-sync-and-send" },
           ],
         },
+        {
+          label: "异步编程",
+          items: [
+            { slug: "ch17-00-async-await" },
+            { slug: "ch17-01-futures-and-syntax" },
+            { slug: "ch17-02-concurrency-with-async" },
+            { slug: "ch17-03-more-futures" },
+            { slug: "ch17-04-streams" },
+            { slug: "ch17-05-traits-for-async" },
+            { slug: "ch17-06-futures-tasks-threads" },
+          ],
+        },
       ],
     }),
   ],
