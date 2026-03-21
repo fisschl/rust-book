@@ -85,6 +85,24 @@ fn main() {}
 | `<Listing ...>` | Convert to `**清单 X-X**` | Standard markdown |
 | `<span class="filename">` | Convert to `*文件名: path*` | Use italic |
 | **Images** | **Must use `![alt](path)`, not `<img>`** | HTML has path issues |
+| Code block languages | **Simplify to single language** | MDbook uses `rust,ignore`, use `rust` |
+
+### Code Block Language Conversion
+
+MDbook uses compound language specifiers that Astro Expressive Code doesn't recognize:
+
+| MDbook Language | Starlight Language | Notes |
+|----------------|-------------------|-------|
+| `rust,ignore` | `rust` | Code that shouldn't be run |
+| `rust,ignore,does_not_compile` | `rust` | Code with intentional errors |
+| `rust,editable` | `rust` | Interactive code (keep as `rust`) |
+
+**Conversion:**
+```bash
+# Replace compound languages with single language
+sed -i 's/rust,ignore/rust/g' file.md
+sed -i 's/rust,does_not_compile/rust/g' file.md
+```
 
 ### Image Path Rules
 

@@ -19,6 +19,7 @@ export default defineConfig({
             { label: "Hello, Cargo!", slug: "ch01-03-hello-cargo" },
           ],
         },
+        { label: "编写猜数字游戏", slug: "ch02-00-guessing-game-tutorial" },
       ],
     }),
   ],
