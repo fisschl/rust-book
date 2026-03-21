@@ -1,63 +1,83 @@
 ---
 name: rust-book-translate
-description: Rust Book 中文翻译技能，包含术语表和教训记录。
+description: Rust Book Chinese translation skill, including glossary, formatting rules, and lessons learned.
 ---
 
-# Rust Book 翻译
+# Rust Book Translation
 
-## 经验教训（2025-03-21）
+## Lessons Learned (2025-03-21)
 
-### 关键发现
-1. **必须添加 frontmatter** - Astro Starlight 要求每个 `.md` 文件包含 `title:`
-2. **首页单独处理** - `index.md` 使用 `template: splash`，不加入侧边栏
-3. **链接格式** - `["安装"]` 是错误的，应为 `[安装]`
-4. **导航配置** - 顶级页面直接作为数组项，不需要嵌套 `label/items`
+### Key Findings
+1. **Must add frontmatter** - Astro Starlight requires every `.md` file to have `title:`
+2. **Homepage handled separately** - `index.md` uses `template: splash`, not included in sidebar
+3. **Link format** - `["Installation"]` is wrong, should be `[Installation]`
+4. **Navigation config** - Top-level pages as array items directly, no nested `label/items`
+5. **Image syntax** - HTML `<img>` tags have path resolution issues in Astro/Starlight, must use Markdown `![alt](path)` syntax
 
-### 常见陷阱
-- 忘记检查 `bun run dev` 错误提示
-- 修改后未验证链接是否可点击
-- 术语不一致（如 "trait" 有时译成 "特性"）
+### Common Pitfalls
+- Forgetting to check `bun run dev` error messages
+- Not verifying links are clickable after changes
+- Inconsistent terminology (e.g., "trait" sometimes translated as "特性")
 
-## 快速开始
+## Quick Start
 
-1. 检查原文：`book-main/src/` 下对应文件
-2. 创建文件：`src/content/docs/<原文件名>`
-3. 添加 frontmatter：
+1. Check original: file in `book-main/src/`
+2. Create file: `src/content/docs/<original-filename>`
+3. Add frontmatter:
    ```yaml
    ---
-   title: 页面标题
+   title: Page Title
    ---
    ```
-4. 翻译内容，保留格式
-5. 更新 `astro.config.ts` sidebar 添加新页面
-6. 运行 `bun run dev` 验证
+4. Translate content, preserve formatting
+5. Update `astro.config.ts` sidebar to add new page
+6. Run `bun run dev` to verify
 
-## 核心术语
+## Core Terminology
 
-**保留英文：** trait, crate, Cargo, Ferris, panic, Rust
-**标准译法：**
+**Keep in English:** trait, crate, Cargo, Ferris, panic, Rust
+**Standard Translations:**
 - ownership → 所有权
 - borrowing → 借用
 - lifetimes → 生命周期
 - generics → 泛型
 - closures → 闭包
 
-## 格式规则
+## Formatting Rules
 
-| 元素 | 处理 |
-|------|------|
-| 代码块 | 原样保留 |
-| `<!-- ignore -->` | 保留 |
-| `[text][ref]` | 保留链接语法 |
-| `<span id="...">` | 保留 HTML |
-| `*italic*` | 保留斜体 |
-| `**bold**` | 保留粗体 |
+| Element | Handling |
+|---------|----------|
+| Code blocks | Preserve as-is |
+| `<!-- ignore -->` | Keep |
+| `[text][ref]` | Keep link syntax |
+| `<span id="...">` | Keep HTML |
+| `*italic*` | Keep italics |
+| `**bold**` | Keep bold |
+| **Images** | **Must use `![alt](path)`, not `<img>`** |
 
-## 检查清单
+### Image Path Rules
 
-- [ ] frontmatter 包含 title
-- [ ] 无 `"["文本"]` 错误链接
-- [ ] 术语与术语表一致
-- [ ] 代码未翻译
-- [ ] Ferris 图片路径正确
-- [ ] `bun run dev` 无报错
+**Correct:**
+```markdown
+![Ferris with question mark](img/ferris/does_not_compile.svg)
+```
+
+**Incorrect:**
+```html
+<!-- Don't use HTML img tags, path resolution has issues -->
+<img src="img/ferris/does_not_compile.svg" alt="...">
+<img src="./img/ferris/does_not_compile.svg" alt="...">
+```
+
+**Image Directory Structure:**
+- Place images in `src/content/docs/img/` (consistent with original structure)
+- Path is relative to markdown file, no `./` prefix needed
+
+## Checklist
+
+- [ ] Frontmatter contains title
+- [ ] No `["text"]` incorrect link format
+- [ ] Terminology consistent with glossary
+- [ ] Code not translated
+- [ ] Ferris images use Markdown syntax
+- [ ] `bun run dev` runs without errors

@@ -81,9 +81,9 @@ Rust 语言希望支持许多其他用户；这里提到的只是一些最大的
 
 | Ferris                                                                                                           | 含义                                          |
 | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| <img src="img/ferris/does_not_compile.svg" class="ferris-explain" alt="带问号的 Ferris"/>            | 这段代码无法编译！                      |
-| <img src="img/ferris/panics.svg" class="ferris-explain" alt="举起双手的 Ferris"/>                   | 这段代码会 panic！                                |
-| <img src="img/ferris/not_desired_behavior.svg" class="ferris-explain" alt="单爪抬起、耸肩的 Ferris"/> | 这段代码不会产生预期的行为。 |
+| ![带问号的 Ferris](img/ferris/does_not_compile.svg)            | 这段代码无法编译！                      |
+| ![举起双手的 Ferris](img/ferris/panics.svg)                   | 这段代码会 panic！                                |
+| ![单爪抬起、耸肩的 Ferris](img/ferris/not_desired_behavior.svg) | 这段代码不会产生预期的行为。 |
 
 在大多数情况下，我们会引导你找到任何不编译代码的正确版本。
 
