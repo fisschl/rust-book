@@ -54,6 +54,16 @@ export default defineConfig({
           items: [
             { label: "概述", slug: "ch06-00-enums" },
             { label: "定义枚举", slug: "ch06-01-defining-an-enum" },
+            { label: "match 控制流结构", slug: "ch06-02-match" },
+            { label: "if let 和 let...else 简洁控制流", slug: "ch06-03-if-let" },
+          ],
+        },
+        {
+          label: "使用包、crate 和模块管理项目",
+          items: [
+            { label: "概述", slug: "ch07-00-managing-growing-projects-with-packages-crates-and-modules" },
+            { label: "包和 crate", slug: "ch07-01-packages-and-crates" },
+            { label: "用模块控制作用域和隐私", slug: "ch07-02-defining-modules-to-control-scope-and-privacy" },
           ],
         },
       ],
