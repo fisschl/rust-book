@@ -40,6 +40,22 @@ export default defineConfig({
             { label: "切片类型", slug: "ch04-03-slices" },
           ],
         },
+        {
+          label: "使用结构体组织相关联的数据",
+          items: [
+            { label: "概述", slug: "ch05-00-structs" },
+            { label: "定义并实例化结构体", slug: "ch05-01-defining-structs" },
+            { label: "使用结构体的示例程序", slug: "ch05-02-example-structs" },
+            { label: "方法语法", slug: "ch05-03-method-syntax" },
+          ],
+        },
+        {
+          label: "枚举和模式匹配",
+          items: [
+            { label: "概述", slug: "ch06-00-enums" },
+            { label: "定义枚举", slug: "ch06-01-defining-an-enum" },
+          ],
+        },
       ],
     }),
   ],
