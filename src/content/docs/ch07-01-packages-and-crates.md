@@ -1,5 +1,5 @@
 ---
-title: "包和 crate"
+title: "7.1. 包和 crate"
 ---
 
 我们要介绍的模块系统的第一部分是包和 crate。

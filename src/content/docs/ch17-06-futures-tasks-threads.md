@@ -1,5 +1,5 @@
 ---
-title: 综合应用：Futures、Tasks 和 Threads
+title: 17.6. 综合应用：Futures、Tasks 和 Threads
 ---
 
 正如我们在[第16章][ch16]看到的，线程提供了一种并发方法。我们在本章中看到了另一种方法：使用 async 与 futures 和 streams。如果你想知道何时选择一种方法而不是另一种，答案是：这取决于！而且在很多情况下，选择不是线程 *或* async，而是线程 *和* async。

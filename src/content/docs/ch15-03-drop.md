@@ -1,7 +1,5 @@
 ---
-title: 使用 `Drop` Trait 在清理时运行代码
-sidebar:
-  label: 使用 Drop Trait 在清理时运行代码
+title: 15.3. 使用 Drop Trait 在清理时运行代码
 ---
 
 对智能指针模式很重要的第二个 trait 是 `Drop`，它允许你自定义当值即将超出作用域时会发生什么。你可以为任何类型提供 `Drop` trait 的实现，该代码可用于释放文件或网络连接等资源。

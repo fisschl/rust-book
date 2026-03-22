@@ -1,5 +1,5 @@
 ---
-title: 向 stderr 而不是 stdout 写入
+title: 12.6. 向 stderr 而不是 stdout 写入
 ---
 
 ## 将错误重定向到标准错误

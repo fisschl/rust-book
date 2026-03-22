@@ -1,7 +1,5 @@
 ---
-title: 使用 `cargo install` 安装二进制文件
-sidebar:
-  label: 使用 cargo install 安装二进制文件
+title: 14.4. 使用 cargo install 安装二进制文件
 ---
 
 `cargo install` 命令允许你在本地安装和使用二进制 crate。这不是为了取代系统包；它是 Rust 开发人员安装其他人在 [crates.io](https://crates.io/) 上分享的工具的一种便捷方式。注意，你只能安装具有二进制目标的包。 _二进制目标_ 是如果 crate 有 _src/main.rs_ 文件或另一个文件指定为二进制文件时创建的可运行程序，而不是不能单独运行但适合包含在其他程序中的库目标。通常，crate 在 README 文件中有关于 crate 是库、有二进制目标还是两者的信息。

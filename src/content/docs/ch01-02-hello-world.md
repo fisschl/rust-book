@@ -1,5 +1,5 @@
 ---
-title: Hello, world!
+title: 1.2. Hello, world!
 ---
 
 现在你已经安装了 Rust，是时候编写你的第一个 Rust 程序了。学习一门新语言时，传统上会编写一个小程序将文本 `Hello, world!` 打印到屏幕上，所以我们在这里也这样做！

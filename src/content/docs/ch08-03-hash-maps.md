@@ -1,5 +1,5 @@
 ---
-title: 在 Hash Map 中存储键与关联值
+title: 8.3. 在 Hash Map 中存储键与关联值
 ---
 
 我们常见的集合中最后一个是 hash map。类型 `HashMap<K, V>` 使用 _哈希函数_ 存储键类型 `K` 到值类型 `V` 的映射，该函数确定如何将这些键和值放入内存。许多编程语言支持这种数据结构，但它们通常使用不同的名称，例如 _hash_ 、 _map_ 、 _object_ 、 _hash table_ 、 _dictionary_  或  _associative array_ ，仅举几例。

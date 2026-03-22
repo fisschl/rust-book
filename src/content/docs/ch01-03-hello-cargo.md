@@ -1,5 +1,5 @@
 ---
-title: Hello, Cargo!
+title: 1.3. Hello, Cargo!
 ---
 
 Cargo 是 Rust 的构建系统和包管理器。大多数 Rustaceans 使用这个工具来管理他们的 Rust 项目，因为 Cargo 为你处理了很多任务，比如构建你的代码、下载你的代码依赖的库以及构建那些库。（我们将你的代码需要的库称为 *依赖*。）

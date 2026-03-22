@@ -11,7 +11,7 @@ export default defineConfig({
         { slug: "foreword" },
         { slug: "ch00-00-introduction" },
         {
-          label: "开始入门",
+          label: "1. 开始入门",
           items: [
             { slug: "ch01-00-getting-started" },
             { slug: "ch01-01-installation" },
@@ -21,7 +21,7 @@ export default defineConfig({
         },
         { slug: "ch02-00-guessing-game-tutorial" },
         {
-          label: "通用编程概念",
+          label: "3. 通用编程概念",
           items: [
             { slug: "ch03-00-common-programming-concepts" },
             { slug: "ch03-01-variables-and-mutability" },
@@ -32,7 +32,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "理解所有权",
+          label: "4. 理解所有权",
           items: [
             { slug: "ch04-00-understanding-ownership" },
             { slug: "ch04-01-what-is-ownership" },
@@ -41,7 +41,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "使用结构体组织相关联的数据",
+          label: "5. 使用结构体组织相关联的数据",
           items: [
             { slug: "ch05-00-structs" },
             { slug: "ch05-01-defining-structs" },
@@ -50,7 +50,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "枚举和模式匹配",
+          label: "6. 枚举和模式匹配",
           items: [
             { slug: "ch06-00-enums" },
             { slug: "ch06-01-defining-an-enum" },
@@ -59,7 +59,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "使用包、crate 和模块管理项目",
+          label: "7. 使用包、crate 和模块管理项目",
           items: [
             { slug: "ch07-00-managing-growing-projects-with-packages-crates-and-modules" },
             { slug: "ch07-01-packages-and-crates" },
@@ -70,7 +70,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "常见集合",
+          label: "8. 常见集合",
           items: [
             { slug: "ch08-00-common-collections" },
             { slug: "ch08-01-vectors" },
@@ -79,7 +79,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "错误处理",
+          label: "9. 错误处理",
           items: [
             { slug: "ch09-00-error-handling" },
             { slug: "ch09-01-unrecoverable-errors-with-panic" },
@@ -88,7 +88,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "泛型类型、Trait 和生命周期",
+          label: "10. 泛型类型、Trait 和生命周期",
           items: [
             { slug: "ch10-00-generics" },
             { slug: "ch10-01-syntax" },
@@ -97,7 +97,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "编写自动化测试",
+          label: "11. 编写自动化测试",
           items: [
             { slug: "ch11-00-testing" },
             { slug: "ch11-01-writing-tests" },
@@ -106,7 +106,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "I/O 项目：构建命令行程序",
+          label: "12. I/O 项目：构建命令行程序",
           items: [
             { slug: "ch12-00-an-io-project" },
             { slug: "ch12-01-accepting-command-line-arguments" },
@@ -118,7 +118,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "Rust 中的函数式语言功能",
+          label: "13. Rust 中的函数式语言功能",
           items: [
             { slug: "ch13-00-functional-features" },
             { slug: "ch13-01-closures" },
@@ -128,7 +128,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "Cargo 的更多内容",
+          label: "14. Cargo 的更多内容",
           items: [
             { slug: "ch14-00-more-about-cargo" },
             { slug: "ch14-01-release-profiles" },
@@ -139,7 +139,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "智能指针",
+          label: "15. 智能指针",
           items: [
             { slug: "ch15-00-smart-pointers" },
             { slug: "ch15-01-box" },
@@ -151,7 +151,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "无畏并发",
+          label: "16. 无畏并发",
           items: [
             { slug: "ch16-00-concurrency" },
             { slug: "ch16-01-threads" },
@@ -161,7 +161,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "异步编程",
+          label: "17. 异步编程",
           items: [
             { slug: "ch17-00-async-await" },
             { slug: "ch17-01-futures-and-syntax" },
@@ -173,7 +173,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "面向对象编程特性",
+          label: "18. 面向对象编程特性",
           items: [
             { slug: "ch18-00-oop" },
             { slug: "ch18-01-what-is-oo" },
@@ -182,7 +182,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "模式与匹配",
+          label: "19. 模式与匹配",
           items: [
             { slug: "ch19-00-patterns" },
             { slug: "ch19-01-all-the-places-for-patterns" },
@@ -191,7 +191,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "高级特性",
+          label: "20. 高级特性",
           items: [
             { slug: "ch20-00-advanced-features" },
             { slug: "ch20-01-unsafe-rust" },
@@ -199,6 +199,28 @@ export default defineConfig({
             { slug: "ch20-03-advanced-types" },
             { slug: "ch20-04-advanced-functions-and-closures" },
             { slug: "ch20-05-macros" },
+          ],
+        },
+        {
+          label: "21. 最终项目",
+          items: [
+            { slug: "ch21-00-final-project-a-web-server" },
+            { slug: "ch21-01-single-threaded" },
+            { slug: "ch21-02-multithreaded" },
+            { slug: "ch21-03-graceful-shutdown-and-cleanup" },
+          ],
+        },
+        {
+          label: "22. 附录",
+          items: [
+            { slug: "appendix-00" },
+            { slug: "appendix-01-keywords" },
+            { slug: "appendix-02-operators" },
+            { slug: "appendix-03-derivable-traits" },
+            { slug: "appendix-04-useful-development-tools" },
+            { slug: "appendix-05-editions" },
+            { slug: "appendix-06-translation" },
+            { slug: "appendix-07-nightly-rust" },
           ],
         },
       ],

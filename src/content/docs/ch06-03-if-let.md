@@ -1,5 +1,5 @@
 ---
-title: "if let 和 let...else 简洁控制流"
+title: 6.3. if let 和 let...else 简洁控制流
 ---
 
 `if let` 语法让你可以将 `if` 和 `let` 组合成一种不太冗长的方式来处理匹配单个模式的值，同时忽略其余的值。考虑代码清单 6-6 中的程序，它对 `config_max` 变量中的 `Option<u8>` 值进行匹配，但只想在值是 `Some` 变体时执行代码。

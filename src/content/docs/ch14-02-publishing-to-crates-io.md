@@ -1,5 +1,5 @@
 ---
-title: 将 crate 发布到 Crates.io
+title: 14.2. 将 crate 发布到 Crates.io
 ---
 
 我们已经使用来自 [crates.io](https://crates.io/) 的包作为我们项目的依赖项，但你也可以通过发布自己的包与其他人分享你的代码。[crates.io](https://crates.io/) 上的 crate 注册中心分发你包的源代码，因此它主要托管开源代码。
