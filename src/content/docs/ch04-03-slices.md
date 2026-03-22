@@ -340,7 +340,7 @@ assert_eq!(slice, &[2, 3]);
 所有权影响 Rust 的许多其他部分的工作方式，因此我们将在本书的其余部分进一步讨论这些概念。让我们继续进入第 5 章，看看如何在 `struct` 中将数据片段组合在一起。
 
 [字符串]: /rust-book/ch08-02-strings/#使用字符串存储-utf-8-编码文本
-[ch08]: https://doc.rust-lang.org/book/ch08-00-common-collections.html
+[ch08]: /rust-book/ch08-00-common-collections
 [ch13]: /rust-book/ch13-02-iterators/
 [ch6]: /rust-book/ch06-02-match/#绑定到值的匹配模式
 [deref-coercions]: /rust-book/ch15-02-deref/#在函数和方法中使用-deref-强制转换

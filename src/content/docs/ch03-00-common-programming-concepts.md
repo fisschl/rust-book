@@ -10,4 +10,4 @@ title: 3.0. 概述
 >
 > Rust 语言有一组 *关键字* 仅供语言本身使用，就像其他语言一样。请记住，你不能将这些词用作变量或函数的名称。大多数关键字都有特殊含义，你将使用它们在 Rust 程序中执行各种任务；少数关键字目前没有与之相关的功能，但已被保留，以备将来可能添加到 Rust 中的功能。你可以在[附录 A][appendix_a] 中找到关键字列表。
 
-[appendix_a]: https://doc.rust-lang.org/book/appendix-01-keywords.html
+[appendix_a]: /rust-book/appendix-01-keywords

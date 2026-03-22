@@ -139,5 +139,5 @@ $ ./main # 或在 Windows 上使用 .\main
 仅使用 `rustc` 编译对于简单的程序来说没问题，但随着项目增长，你会想要管理所有选项并轻松分享你的代码。接下来，我们将向你介绍 Cargo 工具，它将帮助你编写真实世界的 Rust 程序。
 
 [troubleshooting]: /rust-book/ch01-01-installation#故障排除
-[devtools]: https://doc.rust-lang.org/book/appendix-04-useful-development-tools.html
-[ch20-macros]: https://doc.rust-lang.org/book/ch20-05-macros.html
+[devtools]: /rust-book/appendix-04-useful-development-tools
+[ch20-macros]: /rust-book/ch20-05-macros

@@ -430,4 +430,4 @@ fn main() {
 接下来，我们将研究模式，这是 Rust 的另一项特性，可以实现很大的灵活性。我们在整本书中都简要地看过它们，但还没有看到它们的全部能力。让我们开始吧！
 
 [more-info-than-rustc]: /rust-book/ch09-03-to-panic-or-not-to-panic#当比编译器拥有更多信息时
-[macros]: https://doc.rust-lang.org/book/ch20-05-macros.html
+[macros]: /rust-book/ch20-05-macros

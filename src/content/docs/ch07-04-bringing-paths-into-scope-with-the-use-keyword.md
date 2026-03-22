@@ -274,6 +274,6 @@ use std::collections::*;
 
 Glob 运算符经常在测试时使用，将测试下的所有内容引入 `tests` 模块；我们将在[第 11 章][ch11-tests]的"如何编写测试"中讨论这个问题。
 
-[ch14-export]: https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html#exporting-a-convenient-public-api
+[ch14-export]: /rust-book/ch14-02-publishing-to-crates-io#导出一个方便的公共-api
 [ch02-random]: /rust-book/ch02-00-guessing-game-tutorial/#生成随机数
-[ch11-tests]: https://doc.rust-lang.org/book/ch11-01-writing-tests.html#how-to-write-tests
+[ch11-tests]: /rust-book/ch11-01-writing-tests

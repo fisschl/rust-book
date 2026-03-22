@@ -161,5 +161,5 @@ $ cargo build
 
 [installation]: /rust-book/ch01-01-installation
 [toml]: https://toml.io
-[appendix-e]: https://doc.rust-lang.org/book/appendix-05-editions.html
+[appendix-e]: /rust-book/appendix-05-editions
 [cargo]: https://doc.rust-lang.org/cargo/

@@ -319,8 +319,8 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 [comparing-the-guess-to-the-secret-number]: /rust-book/ch02-00-guessing-game-tutorial#比较猜测与秘密数字
 [twos-complement]: https://en.wikipedia.org/wiki/Two%27s_complement
 [control-flow]: /rust-book/ch03-05-control-flow
-[strings]: https://doc.rust-lang.org/book/ch08-02-strings.html#storing-utf-8-encoded-text-with-strings
-[stack-and-heap]: /rust-book/ch04-01-what-is-ownership/#栈与堆
-[vectors]: https://doc.rust-lang.org/book/ch08-01-vectors.html
-[unrecoverable-errors-with-panic]: https://doc.rust-lang.org/book/ch09-01-unrecoverable-errors-with-panic.html
-[appendix_b]: https://doc.rust-lang.org/book/appendix-02-operators.html
+[strings]: /rust-book/ch08-02-strings
+[stack-and-heap]: /rust-book/ch04-01-what-is-ownership#栈与堆
+[vectors]: /rust-book/ch08-01-vectors
+[unrecoverable-errors-with-panic]: /rust-book/ch09-01-unrecoverable-errors-with-panic
+[appendix_b]: /rust-book/appendix-02-operators

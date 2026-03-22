@@ -905,7 +905,7 @@ mod tests {
 [bench]: https://doc.rust-lang.org/nightly/unstable-book/library-features/test.html
 [concatenating]: /rust-book/ch08-02-strings/#使用--或-format-连接
 [controlling-how-tests-are-run]: /rust-book/ch11-02-running-tests/#控制测试的运行方式
-[derivable-traits]: https://doc.rust-lang.org/book/appendix-03-derivable-traits.html
+[derivable-traits]: /rust-book/appendix-03-derivable-traits
 [doc-comments]: /rust-book/ch14-02-publishing-to-crates-io/#文档注释作为测试
 [ignoring]: /rust-book/ch11-02-running-tests/#除非特别要求否则忽略测试
 [paths-for-referring-to-an-item-in-the-module-tree]: /rust-book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree/#路径引用模块树中的项

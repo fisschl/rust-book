@@ -197,5 +197,5 @@ error: could not compile `gui` (bin "gui") due to 1 previous error
 当我们使用 trait 对象时，Rust 必须使用动态分发。编译器不知道可能用于使用 trait 对象的代码的所有类型，所以它不知道要在哪个类型上调用哪个方法实现。相反，在运行时，Rust 使用 trait 对象内部的指针来知道要调用哪个方法。这种查找会产生静态分发不会产生的运行时成本。动态分发还阻止编译器选择内联方法代码，从而阻止一些优化，Rust 有关于你能在哪里和不能在哪里使用动态分发的规则，称为 **dyn 兼容性** 。这些规则超出了本次讨论的范围，但你可以在[参考文档][dyn-compatibility]中阅读更多关于它们的内容。然而，我们在清单 18-5 编写的代码中确实获得了额外的灵活性，并能够在清单 18-9 中支持，所以这是一个需要考虑的权衡。
 
 [performance-of-code-using-generics]: /rust-book/ch10-01-syntax#使用泛型的代码性能
-[dynamically-sized]: https://doc.rust-lang.org/book/ch20-03-advanced-types.html#dynamically-sized-types-and-the-sized-trait
+[dynamically-sized]: /rust-book/ch20-03-advanced-types#动态大小类型和-sized-trait
 [dyn-compatibility]: https://doc.rust-lang.org/reference/items/traits.html#dyn-compatibility

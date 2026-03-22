@@ -41,4 +41,4 @@ fn main() {
 
 Rust 还有另一种注释，文档注释，我们将在第14章的["将 Crate 发布到 Crates.io"][publishing]部分讨论。
 
-[publishing]: https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html
+[publishing]: /rust-book/ch14-02-publishing-to-crates-io

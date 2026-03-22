@@ -273,4 +273,4 @@ pub fn eat_at_restaurant() {
 
 还有一种涉及 `pub` 的情况我们还没有涵盖，那就是我们最后一个模块系统特性：`use` 关键字。我们将先单独介绍 `use`，然后再展示如何结合 `pub` 和 `use` 使用。
 
-[ch12]: https://doc.rust-lang.org/book/ch12-00-an-io-project.html
+[ch12]: /rust-book/ch12-00-an-io-project
