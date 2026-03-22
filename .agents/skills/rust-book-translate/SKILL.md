@@ -145,7 +145,11 @@ MDbook compound languages → Starlight single language:
 
 ## Core Terminology
 
-**Keep in English:** trait, crate, Cargo, Ferris, panic, Rust
+**Keep in English (Never Translate):**
+- trait, crate, Cargo, Ferris, panic, Rust
+- unsafe (as a concept/keyword)
+- macro (keep lowercase when referring to the general concept)
+- newtype (keep lowercase as it's a term)
 
 **Standard Translations:**
 - ownership → 所有权
@@ -153,28 +157,152 @@ MDbook compound languages → Starlight single language:
 - lifetimes → 生命周期
 - generics → 泛型
 - closures → 闭包
+- unsafe Rust → Unsafe Rust (keep English identifier)
+- unsafe superpowers → unsafe 超能力
+- raw pointers → 原始指针
+- function pointers → 函数指针
+- associated types → 关联类型
+- default type parameters → 默认类型参数
+- fully qualified syntax → 完全限定语法
+- supertrait → 超 Trait
+- operator overloading → 运算符重载
+- diverging functions → 发散函数
+- never type → never 类型 / 永不返回的类型
+- dynamically sized types (DST) → 动态大小类型
+- type aliases → 类型别名 / 类型同义词
+- declarative macros → 声明式宏
+- procedural macros → 过程宏
+- derive macros → derive 宏
+- attribute-like macros → 类属性宏
+- function-like macros → 类函数宏
+- opaque type → 不透明类型
+- metaprogramming → 元编程
+- FFI (Foreign Function Interface) → 外部函数接口（FFI）
 
-## Common Pitfalls
+## Translation Workflow
 
-- Forgetting to check `bun run dev` error messages
-- Not verifying links are clickable after changes
-- Inconsistent terminology (e.g., "trait" sometimes translated as "特性")
-- Missing spaces around formatting markers with Chinese text
+### Before Starting a Chapter
 
-## Checklist
+1. **Check original file** in `book-main/src/` for structure
+2. **Identify code examples** - read all listing files from `book-main/listings/`
+3. **Note special formatting** - MDbook-specific tags that need conversion
+4. **Plan link references** - identify internal links that need updating
 
-Before marking a chapter complete:
+### Translation Process
 
-- [ ] Frontmatter contains title
-- [ ] Internal links use `/rust-book/...` (NOT `./filename`)
-- [ ] Link anchors use Chinese text (e.g., `#遮蔽shadowing`)
-- [ ] Untranslated chapter links point to doc.rust-lang.org
-- [ ] No MDbook markup (`<!-- ignore -->`, `<Listing>`, `<a id="...">`)
-- [ ] Chinese text has spaces around `_italic_` and `**bold**` markers
-- [ ] Images use `![alt](path)` syntax (not `<img>`)
-- [ ] Code blocks use single language (not `rust,ignore`)
-- [ ] Terminology consistent with glossary
-- [ ] Code examples not translated
-- [ ] `bun run dev` runs without errors
-- [ ] No duplicate titles (frontmatter `title` + markdown `# Title`)
-- [ ] Links work with BOTH `/page/` and `/page` URLs
+1. **Translate one file at a time** (don't batch multiple files)
+2. **Copy code examples** from original listings (don't translate code)
+3. **Keep English comments** unless they're explanatory (not API docs)
+4. **Use consistent terminology** from glossary
+5. **Test build frequently** (`bun run build`)
+
+### Code Block Handling
+
+When code block contains multiple language annotations:
+
+| Original | Convert To | Notes |
+|----------|-----------|-------|
+| `rust,ignore` | `rust` | Standard Rust code |
+| `rust,noplayground` | `rust` | Remove noplayground |
+| `rust,ignore,does_not_compile` | `rust` | Remove all modifiers |
+| `rust,editable` | `rust` | Remove editable tag |
+| `text` | Keep as `text` | For output/console text |
+
+### Link Reference Best Practices
+
+**Format at end of file:**
+```markdown
+[link-id]: /rust-book/chXX-slug#中文锚点
+[other-link]: https://doc.rust-lang.org/book/...
+```
+
+**Rules:**
+- Keep all link references together at file end
+- Use Chinese anchors that match translated headings
+- External links to Rust Reference stay as https://doc.rust-lang.org/reference/
+
+## Pre-Commit Checklist
+
+Before committing a translated file:
+
+### Content Quality
+- [ ] Translation matches original meaning (not literal translation)
+- [ ] Technical terms use glossary consistently
+- [ ] Code examples identical to original (not translated)
+- [ ] Comments in code: English preserved unless explanatory
+- [ ] No stray English phrases left untranslated
+
+### Format Verification
+- [ ] Frontmatter has `title:` in Chinese
+- [ ] No duplicate H1 (frontmatter title + markdown `# Title`)
+- [ ] Code blocks use `rust` only (no `rust,ignore`, `rust,noplayground`)
+- [ ] Chinese text has spaces around `**bold**` and `_italic_`
+- [ ] All MDbook tags removed: `<!-- ignore -->`, `<Listing>`, `<a id="...">`
+- [ ] Link references at file end use `/rust-book/` prefix
+- [ ] Internal links use Chinese anchors (e.g., `#关联类型`)
+
+### Build & Navigation
+- [ ] `astro.config.ts` updated with new page slug
+- [ ] `bun run build` completes without errors
+- [ ] Page count increased correctly (e.g., 100 → 101)
+- [ ] No 404 errors for internal links
+
+## Post-Translation Review
+
+After completing a chapter:
+
+1. **Read through entire file** for flow and clarity
+2. **Check for common errors:**
+   - Missing translations (Ctrl+F for English words)
+   - Wrong link anchors
+   - Formatting inconsistencies
+   - Code block language issues
+3. **Verify with original** that meaning is preserved
+4. **Run full build** and check all pages generate
+5. **Commit with descriptive message:**
+   ```
+   feat: translate Chapter XX (Title) to Chinese
+   
+   - chXX-00-xxx.md: Overview
+   - chXX-01-xxx.md: Section 1
+   - chXX-02-xxx.md: Section 2
+   - Update astro.config.ts navigation
+   
+   All files verified with build (XXX pages)
+   ```
+
+## Common Pitfalls & Solutions
+
+### Critical Errors (Break Site)
+| Problem | Solution |
+|---------|----------|
+| Relative links `./filename` | Use `/rust-book/filename` instead |
+| Wrong link anchors | Must match translated heading text exactly |
+| Compound code languages `rust,ignore` | Convert to single `rust` |
+| Duplicate content in file | Check file size; compare to original |
+
+### Content Issues
+- **Inconsistent terminology** → Maintain and use glossary
+- **Untranslated phrases** → Search for English words before commit
+- **Wrong code examples** → Copy from `book-main/listings/` directly
+- **Missing file name labels** → Add `*文件名：src/main.rs*` format
+
+### Formatting Issues
+- **Missing spaces** around `**bold**` with Chinese → `是 **这样**` not `是**这样**`
+- **MDbook tags left in** → Remove `<!-- ignore -->`, `<Listing>`, `<a id="...">`
+- **Wrong heading levels** → Use `##` for sections, not `###`
+- **Missing frontmatter** → Every file needs `title:`
+
+### Build Issues
+- **Forgetting `astro.config.ts`** → Add to checklist
+- **Not running full build** → `bun run build` not just dev
+- **Page count wrong** → Should increase by number of new files
+
+## Lessons Learned
+
+**Chapter 20 specific:**
+- Technical chapters require careful reading of code examples before translating
+- Terms like "newtype", "opaque type", "diverging functions" need glossary entries
+- Link references easier to manage when grouped at file end
+- Always check for duplicate content (copy-paste errors) in long files
+- File size check: if translated file is 2x original, likely has duplicates
