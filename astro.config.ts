@@ -190,6 +190,17 @@ export default defineConfig({
             { slug: "ch19-03-pattern-syntax" },
           ],
         },
+        {
+          label: "高级特性",
+          items: [
+            { slug: "ch20-00-advanced-features" },
+            { slug: "ch20-01-unsafe-rust" },
+            { slug: "ch20-02-advanced-traits" },
+            { slug: "ch20-03-advanced-types" },
+            { slug: "ch20-04-advanced-functions-and-closures" },
+            { slug: "ch20-05-macros" },
+          ],
+        },
       ],
     }),
   ],
