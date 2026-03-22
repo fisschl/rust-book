@@ -172,6 +172,15 @@ export default defineConfig({
             { slug: "ch17-06-futures-tasks-threads" },
           ],
         },
+        {
+          label: "面向对象编程特性",
+          items: [
+            { slug: "ch18-00-oop" },
+            { slug: "ch18-01-what-is-oo" },
+            { slug: "ch18-02-trait-objects" },
+            { slug: "ch18-03-oo-design-patterns" },
+          ],
+        },
       ],
     }),
   ],
