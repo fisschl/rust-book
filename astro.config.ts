@@ -181,6 +181,15 @@ export default defineConfig({
             { slug: "ch18-03-oo-design-patterns" },
           ],
         },
+        {
+          label: "模式与匹配",
+          items: [
+            { slug: "ch19-00-patterns" },
+            { slug: "ch19-01-all-the-places-for-patterns" },
+            { slug: "ch19-02-refutability" },
+            { slug: "ch19-03-pattern-syntax" },
+          ],
+        },
       ],
     }),
   ],
