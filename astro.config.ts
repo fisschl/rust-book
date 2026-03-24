@@ -211,7 +211,7 @@ export default defineConfig({
           ],
         },
         {
-          label: "22. 附录",
+          label: "附录",
           items: [
             { slug: "appendix-00" },
             { slug: "appendix-01-keywords" },

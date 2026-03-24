@@ -1,5 +1,5 @@
 ---
-title: 22.7. G. Rust 的构建方式和 "Nightly Rust"
+title: G. Rust 的构建方式和 "Nightly Rust"
 ---
 
 本附录是关于 Rust 是如何构建的，以及这如何影响你作为 Rust 开发者。
