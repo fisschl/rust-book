@@ -448,7 +448,7 @@ fn main() {
 
 **清单 19-25**：试图以不明确的方式使用 `..`（文件名：*src/main.rs*）
 
-```rust,ignore
+```rust
 fn main() {
     let numbers = (2, 4, 8, 16, 32);
 
